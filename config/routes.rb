@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :user do
+    resources :articles
+  end
+
   get 'home/index'
   devise_scope :user do
     root :to => "home#index"
