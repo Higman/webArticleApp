@@ -6,7 +6,11 @@ h1
     = current_user.email
     = link_to "Settings", edit_user_registration_path, :class => "navbar-link" 
     '|
-    = link_to "Logout", destroy_user_session_path, method: :delete, :class => "navbar-link"
+    = link_to "Logout", destroy_user_session_path, method: :delete, :class => "navbar-link" 
+    '|
+
+  = link_to "記事を投稿する", new_user_article_path(current_user.id)  
+
 - else
   = link_to "Sign up", new_user_registration_path, :class => 'navbar-link' 
   br
@@ -14,4 +18,7 @@ h1
 
 - @articles.each do |article|
   = article.title
+
+
+
 
